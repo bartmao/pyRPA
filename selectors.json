@@ -1,0 +1,7 @@
+{
+    "btn_windows": "<wnd app='explorer.exe' cls='Shell_TrayWnd' /><wnd cls='Start' title='Start' />",
+    "txt_run": "<wnd app='explorer.exe' cls='#32770' title='Run' /><wnd ctrlid='12298' /><wnd ctrlid='1001' />",
+    "win_notepad": "<wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /><wnd aaname='Text Editor' cls='Edit' /><ctrl name='Text Editor' role='editable text' />",
+    "btn_notepad_close": "<wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /><ctrl idx='1' name='Close' role='push button' />",
+    "btn_notepad_cancel": "<wnd app='notepad.exe' cls='#32770' title='Notepad' /><wnd aaname='Notepad' cls='DirectUIHWND' /><wnd aaname='Don&apos;t Save' cls='Button' title='Do&amp;n&apos;t Save' />"
+}

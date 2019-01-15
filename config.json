@@ -1,0 +1,4 @@
+{
+    "logLevel": "dev",
+    "adapter":"http://Bart/RPA.UIPath"
+}
