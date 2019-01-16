@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using UiPath.Core;
 
 namespace RPA.UIPathAdapter
 {
@@ -32,7 +33,7 @@ namespace RPA.UIPathAdapter
             Global.Init();
 
             listener = new HttpListener();
-            listener.Prefixes.Add("http://Bart/RPA.UIPath/");
+            listener.Prefixes.Add("http://localhost/RPA.UIPath/");
             listener.Start();
             Console.WriteLine("Start listening...");
 
@@ -50,10 +51,22 @@ namespace RPA.UIPathAdapter
                     var executeContext = JsonHelper.DeserializeJsonToObject<RPARemoteObj>(req);
                     if (executeContext != null)
                     {
-                        var e = new MyUIElement(executeContext);
-                        result = e.Execute();
+                        try
+                        {
+                            var e = new MyUIElement(executeContext);
+                            result = e.Execute();
+                        }
+                        catch (SelectorNotFoundException ex)
+                        {
+                            result = new ExecuteResult(0x1, "Element Not Found");
+                        }
+                        catch (Exception ex)
+                        {
+                            result = new ExecuteResult(0x2, "Failed Execution: " + ex.Message);
+                        }
                     }
-                    else {
+                    else
+                    {
                         result = new ExecuteResult(-1, "Invalid Remote Object");
                     }
                 }

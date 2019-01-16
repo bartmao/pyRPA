@@ -95,8 +95,12 @@ class uielement(object):
         return attr
 
     def execute(self, obj):
-        return requests.post(
-            configs["adapter"], data=json.dumps(obj)).json()
+        data = json.dumps(obj)
+        resp = requests.post(configs["adapter"], data=data)
+        if(not resp.ok):
+            print(resp)
+            raise Exception('failed to connect to the proxy')
+        return resp.json()
 
     def click(self, type=ClickType.Single, button=MouseButton.Left, pos=Position.Center, method=InputMethod.API):
         return locals()

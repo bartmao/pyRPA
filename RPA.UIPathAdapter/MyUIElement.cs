@@ -18,7 +18,7 @@ namespace RPA.UIPathAdapter
         {
             this.context = context;
             node = new UiElement(SelectorStrategy.DEFAULT);
-            node.Timeout = 3000;
+            node.Timeout = 30000;
             node.WaitForReadyLevel = WaitForReady.INTERACTIVE;
             var selector = context.selector;
             if (!string.IsNullOrEmpty(selector))

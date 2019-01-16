@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPA.UIPathAdapter", "RPA.UIPathAdapter.csproj", "{CF3D797F-AC30-4CF5-BB54-B8E663973B9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF3D797F-AC30-4CF5-BB54-B8E663973B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF3D797F-AC30-4CF5-BB54-B8E663973B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF3D797F-AC30-4CF5-BB54-B8E663973B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF3D797F-AC30-4CF5-BB54-B8E663973B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B2E5D73-FDA3-4347-86B2-6A919D619D48}
+	EndGlobalSection
+EndGlobal
