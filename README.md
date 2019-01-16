@@ -6,9 +6,8 @@ The main idea I use python to do RPA because:
 
 ## Setup
 Using UIPath
-1. Add host entry '127.0.0.1 Bart'
-2. Checkout file [pyRPA/RPA.UIPathAdapter/binary/RPA.UIPathAdapter.exe.config], update `UIPathActFolder` to your own uipath folder
-3. Run adapter pyRPA/RPA.UIPathAdapter/binary/RPA.UIPathAdapter.exe under administrator permission 
+1. Checkout file [pyRPA/RPA.UIPathAdapter/binary/RPA.UIPathAdapter.exe.config], update `UIPathActFolder` to your own uipath folder
+2. Run adapter pyRPA/RPA.UIPathAdapter/binary/RPA.UIPathAdapter.exe under administrator permission 
 
 ## Sample 1 (pyRPA/sample.py)
 
