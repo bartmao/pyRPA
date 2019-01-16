@@ -1,7 +1,7 @@
 # pyRPA
 A slim RPA framework automated by Python, can integrated with other RPA tools, like UIPath. Currently only support UIPath(RPA.UIPathAdapter). 
 The main idea I use python to do RPA because:
-1. Pure code is easier to maintain auto-generated code by the RPA designers
+1. Pure code is easier to maintain compared to auto-generated code by the RPA designers
 2. Can easily do the interception things
 
 ## Setup
