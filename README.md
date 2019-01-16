@@ -15,6 +15,8 @@ This sample will automatically open notepad, type something and close it.
 1. It will create logs before and after each UI automation
 2. It will highlight the element to be operated
 
+![1](https://user-images.githubusercontent.com/4489728/51222515-0bba3280-1979-11e9-9a9d-d77e718f1d1a.gif)
+Output:
 ```code
 Before execution of selector [btn_windows], method [click]
 After execution of selector [btn_windows], method [click]
