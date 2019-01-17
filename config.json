@@ -1,4 +1,5 @@
 {
-    "logLevel": "dev",
-    "adapter":"http://localhost/RPA.UIPath"
+    "logLevel": "trace",
+    "adapter":"http://localhost/RPA.UIPath",
+    "adb":"C:\\Users\\bmao002\\Desktop\\Projects\\platform-tools"
 }

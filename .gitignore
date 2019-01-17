@@ -4,3 +4,4 @@ bin
 obj
 .vs
 RPA.UIPathAdapter/packages
+window_dump*.xml

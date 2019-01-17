@@ -21,7 +21,7 @@ uielement.aftercall = aftercall
 '''
 Start execution
 '''
-#time.sleep(3)
+
 uielement('btn_windows').click(method=InputMethod.Synthesize)
 uielement().typetext('notepad')
 uielement().sendhotkey('enter', isSpecial=1)

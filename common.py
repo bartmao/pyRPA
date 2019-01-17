@@ -1,7 +1,7 @@
 import json
 
-configs = json.load(open('config.json'))
-selectors = json.load(open('selectors.json'))
+configs = json.load(open('config.json', encoding='utf8'))
+selectors = json.load(open('selectors.json', encoding='utf8'))
 
 
 def log(msg):
