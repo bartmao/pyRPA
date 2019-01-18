@@ -43,7 +43,7 @@ After execution of selector [btn_notepad_cancel], method [click]
 ## Sample 2 (pyRPA/sample-andriod.py)
 This sample will search specific contact and print the phone number for you
 
-![1](https://user-images.githubusercontent.com/4489728/51382853-d701d300-1b52-11e9-8d34-b3d82716dc8f.gif=250x)
+![1](https://user-images.githubusercontent.com/4489728/51382853-d701d300-1b52-11e9-8d34-b3d82716dc8f.gif =250x)
 Output:
 ```code
 PS C:\Users\bmao002\Desktop\Projects\pyRPA> python .\sample-andriod.py
