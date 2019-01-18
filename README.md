@@ -2,6 +2,7 @@
 A slim RPA framework automated by Python, can integrated with other RPA tools, like UIPath. Currently support
 1. UIPath(RPA.UIPathAdapter)
 2. Andriod Platform(android/droidagent.py)
+
 The main idea I use python to do RPA because:
 1. Pure code is easier to maintain compared to auto-generated code by the RPA designers
 2. Can easily do the interception things
