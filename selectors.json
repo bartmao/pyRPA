@@ -4,6 +4,7 @@
     "win_notepad": "<wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /><wnd aaname='Text Editor' cls='Edit' /><ctrl name='Text Editor' role='editable text' />",
     "btn_notepad_close": "<wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /><ctrl idx='1' name='Close' role='push button' />",
     "btn_notepad_cancel": "<wnd app='notepad.exe' cls='#32770' title='Notepad' /><wnd aaname='Notepad' cls='DirectUIHWND' /><wnd aaname='Don&apos;t Save' cls='Button' title='Do&amp;n&apos;t Save' />",
-    "btn_phone": "<andriod class='android.widget.ImageView' package='com.smartisanos.keyguard' content-desc='电话'/>",
-    "btn_wx_contact": "<andriod text='通讯录' class='android.widget.TextView' package='com.tencent.mm' />"
+    "txt_contact_search": "<andriod resource-id='com.android.contacts:id/searchbarleft'/>",
+    "txt_contact_search_first": "<andriod resource-id='com.android.contacts:id/name'/>",
+    "txt_contact_details": "<andriod resource-id='com.android.contacts:id/data'/>"
 }

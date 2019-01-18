@@ -2,7 +2,7 @@ import json
 import requests
 from common import configs, selectors, trace
 from enum import Enum
-
+from collections import namedtuple
 
 class ClickType(Enum):
     Single = 0
@@ -40,7 +40,7 @@ class KeyModifiers(Enum):
     Win = 8
 
 
-class uielement(object):
+class UIElement(object):
     @staticmethod
     def beforecall(ins, obj): return None
 
@@ -77,30 +77,25 @@ class uielement(object):
                 # use proxy to execute
                 if(not self.recursive):
                     self.recursive += 1
-                    uielement.beforecall(self, obj)
+                    UIElement.beforecall(self, obj)
                     self.recursive -= 1
 
                 result = self.execute(obj)
-                trace(result)
+                if(isinstance(result, str)):
+                    result = json.loads(result, object_hook=lambda d: namedtuple('ExecutionResult', d.keys())(*d.values()))
                 if(not self.recursive):
                     self.recursive += 1
-                    uielement.aftercall(self, obj)
+                    UIElement.aftercall(self, obj)
                     self.recursive -= 1
 
-                if(result["stat"] == 0):
-                    return result["value"]
-                raise result["message"]
-                # return result
+                if(result.stat == 0):
+                    return result.value
+                raise result.message
             return newfunc
         return attr
 
     def execute(self, obj):
-        data = json.dumps(obj)
-        resp = requests.post(configs["adapter"], data=data)
-        if(not resp.ok):
-            print(resp)
-            raise Exception('failed to connect to the proxy')
-        return resp.json()
+        return json.dumps(ExecutionResult())
 
     def click(self, type=ClickType.Single, button=MouseButton.Left, pos=Position.Center, method=InputMethod.API):
         return locals()
@@ -116,3 +111,12 @@ class uielement(object):
 
     def gettext(self):
         return locals()
+
+class ExecutionResult(object):
+    stat = 0
+    value = None
+    message = None
+    def __init__(self, stat = 0, value = '', message=''):
+        self.stat = stat
+        self.value = value
+        self.message = message

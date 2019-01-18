@@ -2,7 +2,8 @@
 This is a sample to:
     Open notepad, type something and close it
 '''
-from rpa import uielement, KeyModifiers, InputMethod
+from rpa import UIElement, KeyModifiers, InputMethod
+from uipathproxy import UIPathElement
 import time
 
 '''
@@ -15,16 +16,16 @@ def beforecall(ins, obj):
 def aftercall(ins, obj):
     print("After execution of selector [%s], method [%s]" %(ins.selectorkey, obj['method']))
 
-uielement.beforecall = beforecall
-uielement.aftercall = aftercall
+UIElement.beforecall = beforecall
+UIElement.aftercall = aftercall
 
 '''
 Start execution
 '''
 
-uielement('btn_windows').click(method=InputMethod.Synthesize)
-uielement().typetext('notepad')
-uielement().sendhotkey('enter', isSpecial=1)
-uielement('win_notepad').typetext('This UI automation using Python/UIPath Adapter')
-uielement('btn_notepad_close').click()
-uielement('btn_notepad_cancel').click()
+UIPathElement('btn_windows').click(method=InputMethod.Synthesize)
+UIPathElement().typetext('notepad')
+UIPathElement().sendhotkey('enter', isSpecial=1)
+UIPathElement('win_notepad').typetext('This UI automation using Python/UIPath Adapter')
+UIPathElement('btn_notepad_close').click()
+UIPathElement('btn_notepad_cancel').click()
