@@ -1,7 +1,7 @@
 # pyRPA
 A slim RPA framework automated by Python, can integrated with other RPA tools, like UIPath. Currently support
-1. UIPath(RPA.UIPathAdapter)
-2. Andriod Platform(android/droidagent.py)(Currently it's a bit slow because everytime performing an action, I will pull the latest layout, I'm working to update the layout by filtering the event from phone)
+1. UIPath (by RPA.UIPathAdapter)
+2. Andriod Platform(my implementation [android/droidagent.py])(Currently it's a bit slow because everytime performing an action, I will pull the latest layout, I'm working to update the layout by filtering the event from phone)
    
 
 The main idea I use python to do RPA because:
