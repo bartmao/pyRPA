@@ -18,7 +18,7 @@ Using Andriod
 1. Install adb
 2. Install android SDK(optional, we can use <android sdk>/uiautomator to inspect elements)
 
-## Sample 1 (samples/sample.py)
+## Sample driven by UIPath (samples/sample.py)
 
 This sample will automatically open notepad, type something and close it. 
 1. It will create logs before and after each UI automation
@@ -41,7 +41,7 @@ Before execution of selector [btn_notepad_cancel], method [click]
 After execution of selector [btn_notepad_cancel], method [click]
 ```
 
-## Sample 2 (samples/sample-andriod.py)
+## Sample on Android (samples/sample-andriod.py)
 This sample will search specific contact and print the phone number for you
 
 ![1](https://user-images.githubusercontent.com/4489728/51382853-d701d300-1b52-11e9-8d34-b3d82716dc8f.gif)
