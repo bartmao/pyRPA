@@ -1,8 +1,8 @@
 # pyRPA
-A slim RPA framework automated by Python, can integrated with other RPA tools, like UIPath. Currently support
-1. UIPath (by RPA.UIPathAdapter)
-2. Andriod Platform(my implementation [android/droidagent.py])(Currently it's a bit slow because everytime performing an action, I will pull the latest layout, I'm working to update the layout by filtering the event from phone)
-   
+A RPA framework automated by Python, can also integrated with other RPA tools, like UIPath. Currently support
+1. Desktop/Broswer automation driven by UIPath (RPA.UIPathAdapter)
+2. Desktop/Broswer automation driven by Python code (In Progressing...)
+3. Andriod automation(Currently it's a bit slow because everytime performing an action, I will pull the latest layout, I'm working to update the layout by filtering the event from phone)
 
 The main idea I use python to do RPA because:
 1. Pure code is easier to maintain compared to auto-generated code by the RPA designers
@@ -18,7 +18,7 @@ Using Andriod
 1. Install adb
 2. Install android SDK(optional, we can use <android sdk>/uiautomator to inspect elements)
 
-## Sample 1 (pyRPA/sample.py)
+## Sample 1 (samples/sample.py)
 
 This sample will automatically open notepad, type something and close it. 
 1. It will create logs before and after each UI automation
@@ -41,7 +41,7 @@ Before execution of selector [btn_notepad_cancel], method [click]
 After execution of selector [btn_notepad_cancel], method [click]
 ```
 
-## Sample 2 (pyRPA/sample-andriod.py)
+## Sample 2 (samples/sample-andriod.py)
 This sample will search specific contact and print the phone number for you
 
 ![1](https://user-images.githubusercontent.com/4489728/51382853-d701d300-1b52-11e9-8d34-b3d82716dc8f.gif)
