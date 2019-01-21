@@ -1,13 +1,22 @@
 # pyRPA
-A slim RPA framework automated by Python, can integrated with other RPA tools, like UIPath. Currently only support UIPath(RPA.UIPathAdapter). 
+A slim RPA framework automated by Python, can integrated with other RPA tools, like UIPath. Currently support
+1. UIPath (by RPA.UIPathAdapter)
+2. Andriod Platform(my implementation [android/droidagent.py])(Currently it's a bit slow because everytime performing an action, I will pull the latest layout, I'm working to update the layout by filtering the event from phone)
+   
+
 The main idea I use python to do RPA because:
 1. Pure code is easier to maintain compared to auto-generated code by the RPA designers
 2. Can easily do the interception things
+3. Can easily cross platform
 
 ## Setup
 Using UIPath
 1. Checkout file [pyRPA/RPA.UIPathAdapter/binary/RPA.UIPathAdapter.exe.config], update `UIPathActFolder` to your own uipath folder
 2. Run adapter pyRPA/RPA.UIPathAdapter/binary/RPA.UIPathAdapter.exe under administrator permission 
+
+Using Andriod
+1. Install adb
+2. Install android SDK(optional, we can use <android sdk>/uiautomator to inspect elements)
 
 ## Sample 1 (pyRPA/sample.py)
 
@@ -31,3 +40,26 @@ After execution of selector [btn_notepad_close], method [click]
 Before execution of selector [btn_notepad_cancel], method [click]
 After execution of selector [btn_notepad_cancel], method [click]
 ```
+
+## Sample 2 (pyRPA/sample-andriod.py)
+This sample will search specific contact and print the phone number for you
+
+![1](https://user-images.githubusercontent.com/4489728/51382853-d701d300-1b52-11e9-8d34-b3d82716dc8f.gif)
+Output:
+```code
+PS C:\Users\bmao002\Desktop\Projects\pyRPA> python .\sample-andriod.py
+{"selector": "", "method": "start", "args": {"app": "contacts"}, "attrs": {}}
+Warning: Activity not started, its current task has been brought to the front
+{"selector": "<andriod resource-id='com.android.contacts:id/searchbarleft'/>", "method": "click", "args": {"type": 0, "button": 0, "pos": 4, "method": 2}, "attrs": {}}
+.//node[@resource-id="com.android.contacts:id/searchbarleft"]
+performing click @[241.0, 303.0]
+{"selector": "", "method": "typetext", "args": {"text": "Bart", "method": 1}, "attrs": {}}
+performing typing
+{"selector": "<andriod resource-id='com.android.contacts:id/name'/>", "method": "click", "args": {"type": 0, "button": 0, "pos": 4, "method": 2}, "attrs": {}}
+performing click @[411.0, 392.5]
+{"selector": "<andriod resource-id='com.android.contacts:id/data'/>", "method": "gettext", "args": {}, "attrs": {}}
+.//node[@resource-id="com.android.contacts:id/data"]
+performing gettext
+Bart'Phone Number is 188 8888 8888
+```
+
