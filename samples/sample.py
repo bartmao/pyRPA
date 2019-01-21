@@ -3,7 +3,7 @@ This is a sample to:
     Open notepad, type something and close it
 '''
 from rpa import UIElement, KeyModifiers, InputMethod
-from uipathproxy import UIPathElement
+from uipath.uipathproxy import UIPathElement
 import time
 
 '''

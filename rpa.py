@@ -55,7 +55,7 @@ class UIElement(object):
 
     def __getattribute__(self, name):
         attr = object.__getattribute__(self, name)
-        if(hasattr(attr, '__call__') and not name == 'execute'):
+        if(hasattr(attr, '__call__') and not name == 'execute' and '__' not in name):
             def newfunc(*args, **kwargs):
                 # parse selector
                 if(not self.selector == '' and not self.selector.startswith('<')):
@@ -63,16 +63,17 @@ class UIElement(object):
 
                 # construct request
                 locals = attr(*args, **kwargs)
-                fargs = {}
-                for k in locals:
-                    if(k != 'self'):
-                        if(isinstance(locals[k], Enum)):
-                            fargs[k] = locals[k].value
-                        else:
-                            fargs[k] = locals[k]
-                obj = {"selector": self.selector,
-                       "method": attr.__name__, "args": fargs, "attrs": self.attrs}
-                trace(json.dumps(obj))
+                if(not isinstance(locals, ExecutionResult)):
+                    fargs = {}
+                    for k in locals:
+                        if(k != 'self'):
+                            if(isinstance(locals[k], Enum)):
+                                fargs[k] = locals[k].value
+                            else:
+                                fargs[k] = locals[k]
+                    obj = {"selector": self.selector,
+                        "method": attr.__name__, "args": fargs, "attrs": self.attrs}
+                    trace(json.dumps(obj))
 
                 # use proxy to execute
                 if(not self.recursive):
@@ -90,7 +91,7 @@ class UIElement(object):
 
                 if(result.stat == 0):
                     return result.value
-                raise result.message
+                raise Exception(result.message)
             return newfunc
         return attr
 

@@ -5,3 +5,5 @@ obj
 .vs
 RPA.UIPathAdapter/packages
 window_dump*.xml
+test.py
+screenshot.png

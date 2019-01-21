@@ -1,5 +1,4 @@
 from android.droidagent import DroidAdapter, DroidElement
-from uipathproxy import UIPathElement
 from rpa import InputMethod
 import time
 
