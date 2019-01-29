@@ -2,7 +2,7 @@
 A RPA framework automated by Python, can also integrated with other RPA tools, like UIPath. Currently support
 1. Desktop/Broswer automation driven by UIPath (RPA.UIPathAdapter)
 2. Desktop/Broswer automation driven by Python code (In Progressing...)
-3. Andriod automation(Currently it's a bit slow because everytime performing an action, I will pull the latest layout, I'm working to update the layout by filtering the event from phone)
+3. Andriod automation
 
 The main idea I use python to do RPA because:
 1. Pure code is easier to maintain compared to auto-generated code by the RPA designers
